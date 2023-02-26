@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <title>{{ config('app.name') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-100 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-darkblue">
-            <div>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-                    <img src="/images/icon_stadel-weiss.png" class="h-24" alt="STADEL Logo" />
+<body class="antialiased text-gray-900 bg-sdarkblue">
 
-            </div>
-            <div class="text-4xl text-gray-100 font-light">
-                stadel CRM
-            </div>
+    {{ $slot }}
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4   overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
-    </body>
+</body>
+
 </html>

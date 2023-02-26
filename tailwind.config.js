@@ -12,16 +12,16 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
             },
         },
         colors: {
-            'systemeblue': '#01B0EC',
-            'groupblue': '#184b7e',
-            'darkblue': '#0C2D5F',
-          }
+            'sdarkblue': '#0C2E5E',
+            'ssystemblue': '#01B0EC',
+        },
     },
 
+    darkMode: 'class',
 
     plugins: [
         require('@tailwindcss/forms'),
