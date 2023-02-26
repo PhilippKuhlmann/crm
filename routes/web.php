@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-    Route::view('/', 'dashboard');
+    Route::view('/', 'dashboard')->name('dashboard');
 
+
+    Route::get('/customer', [CustomerController::class, 'search'])->name('customer.search');
+    Route::get('/customer/{customer}', [CustomerController::class, 'index'])->name('customer.index');
 
     Route::get('/project/selectCustomer', [ProjectController::class, 'selectCustomer'])->name('project.selectCustomer');
     Route::get('/project/{customer}', [ProjectController::class, 'index'])->name('project.index');

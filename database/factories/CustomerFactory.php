@@ -18,6 +18,8 @@ class CustomerFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'website' => fake()->domainName(),
+            'phone' => fake()->phoneNumber(),
         ];
     }
 }
